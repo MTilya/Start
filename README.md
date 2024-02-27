@@ -12,4 +12,4 @@ public class Main {
 }
 ```
 - `auther` - Tashtanbekov Tilek
-- `date` - date of creation `2024-02-27`
+- `date` - date of creation `2024-02-27 09:02:00`
