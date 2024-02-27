@@ -1,5 +1,6 @@
 # Neobis
-![[images.png]]
+![Image alt](https://github.com/MTilya/Start/blob/main/images.png)
+
 ## Study plan:
 ### Week1
 - learned using git command line
