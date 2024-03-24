@@ -1,29 +1,37 @@
 package week1;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class TriangleTypes_1045 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        double A = scan.nextDouble();
-        double B = scan.nextDouble();
-        double C = scan.nextDouble();
+        double[] points = new double[3];
+        points[0] = scan.nextDouble();
+        points[1] = scan.nextDouble();
+        points[2] = scan.nextDouble();
 
-        if (A>=(B+C)){
+        Arrays.sort(points);
+        double pointA = points[2];
+        double pointB = points[1];
+        double pointC = points[0];
+        if (pointA >= pointB + pointC) {
             System.out.println("NAO FORMA TRIANGULO");
+        } else {
+            if (pointA * pointA == pointB * pointB + pointC * pointC) {
+                System.out.println("TRIANGULO RETANGULO");
+            }
+            if (pointA * pointA > pointB * pointB + pointC * pointC) {
+                System.out.println("TRIANGULO OBTUSANGULO");
+            }
+            if (pointA * pointA < pointB * pointB + pointC * pointC) {
+                System.out.println("TRIANGULO ACUTANGULO");
+            }
+            if (pointA == pointB && pointB == pointC) {
+                System.out.println("TRIANGULO EQUILATERO");
+            }
+            if ((pointB == pointC && pointB != pointA) || (pointA == pointC && pointA != pointB) || (pointA == pointB && pointA != pointC)) {
+                System.out.println("TRIANGULO ISOSCELES");
+            }
         }
-        if (A*A == B*B + C*C)
-            System.out.println("TRIANGULO RETANGULO");
-        else if (A*A > B*B + C*C)
-            System.out.println("TRIANGULO OBTUSANGULO");
-        else
-            System.out.println("TRIANGULO ACUTANGULO");
-        if (A == B && B == C && A == C){
-            System.out.println("TRIANGULO EQUILATERO");
-        }
-        if ((A == B && A != C) || (A == C && A != B) || (B == C && B != A)) {
-            System.out.println("TRIANGULO ISOSCELES");
-        }
-
     }
 }
